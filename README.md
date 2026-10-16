@@ -1,9 +1,28 @@
-# Sea Duel — playtest
+# Sea Duel — crew combat v0.7
 
-Browser build of the experimental naval tactics prototype.
+Experimental browser playtest. Play in landscape.
 
-Play in landscape. Draw from the active ship to sail. Start pulling backwards, away from an enemy in range, to aim; release to fire. Return to your ship to cancel. A close approach automatically boards if at least 30% turn budget remains after sailing. Withdrawing does not trigger boarding. There is no joystick or boarding button.
+Each ship carries 20 fighters. Their surviving number determines its ranged and melee damage.
+Wounds persist. Zero fighters sinks the ship. There is no separate hull HP pool.
 
-Each activation starts with one shared 100% turn bar. Sailing spends distance; FIRE and automatic boarding each spend 30%, at most once each. Cyan bars show the remaining budget. Ships stop on hull contact without pushing stationary ships. Enemy collisions damage both hulls (Swift 9.6 / Brig 14.4 / Galleon 21.6 outgoing damage); friendly contacts deal no damage. Slots determine activation order. Sink the enemy fleet; there are no flagships. Combat keeps the overview camera.
+Draw a route from the active ship to sail. Pull backwards away from an enemy in range and release to fire.
+Return the pull to the ship to cancel. BOARD is a manual button in contact.
+Point-blank shooting remains available.
+Choose ONE action: fire OR board OR defend. Movement can be split before and after an attack.
+End without attacking to DEFEND: 35% less damage until that ship next activates.
 
-Generated from the private Sea Duel source project. This repository contains the published player only.
+Galleon / Gunners: 12 HP per fighter; ranged 6 x2; melee 2; movement 450.
+Brig / Marines: 15 HP per fighter; ranged 2; melee 6 x2; movement 675.
+Swift / Raiders: 12 HP per fighter; ranged 6; melee 8; movement 900. Boarding provokes no reply.
+
+A surviving target in contact replies once before its next activation:
+50% of one melee hit, or 100% while defending. Replies never trigger replies.
+The reply lands between double hits; the second hit uses the surviving attackers.
+
+Pre-battle slots determine activation order. There are no flagships or AP.
+Stationary ships are not pushed. Collision damage is disabled in this crew experiment.
+The balance targets about 15 individual ship activations in the separate open-map model.
+Actual play, aiming, obstacles and bot decisions can differ. First-player advantage remains under study.
+
+This public repository contains generated player files only.
+
