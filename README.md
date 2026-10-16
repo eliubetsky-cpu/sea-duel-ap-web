@@ -1,28 +1,24 @@
-# Sea Duel — crew combat v0.7
+# Sea Duel — simple crew combat v0.8
 
 Experimental browser playtest. Play in landscape.
 
-Each ship carries 20 fighters. Their surviving number determines its ranged and melee damage.
-Wounds persist. Zero fighters sinks the ship. There is no separate hull HP pool.
+Each ship starts with 20 fighters. A large number below the ship shows its surviving crew.
+Damage = surviving fighters x their ranged or melee damage. Wounds persist; zero crew sinks the ship.
+Every attack is one hit. There are no counterattacks, double hits, class exceptions or defence bonuses.
 
-Draw a route from the active ship to sail. Pull backwards away from an enemy in range and release to fire.
-Return the pull to the ship to cancel. BOARD is a manual button in contact.
-Point-blank shooting remains available.
-Choose ONE action: fire OR board OR defend. Movement can be split before and after an attack.
-End without attacking to DEFEND: 35% less damage until that ship next activates.
+Draw a route to sail. Pull backwards from the active ship to fire. Return the pull to cancel.
+BOARD is a manual button in contact. Point-blank shooting is allowed.
+Choose one attack per turn: FIRE or BOARD. Movement is independent and can come before or after it.
+End turn passes without a defence bonus. A miss uses the attack; cancellation does not.
 
-Galleon / Gunners: 12 HP per fighter; ranged 6 x2; melee 2; movement 450.
-Brig / Marines: 15 HP per fighter; ranged 2; melee 6 x2; movement 675.
-Swift / Raiders: 12 HP per fighter; ranged 6; melee 8; movement 900. Boarding provokes no reply.
+| Ship | Fighter HP | Ranged | Melee | Movement |
+|---|---:|---:|---:|---:|
+| Galleon | 18 | 11 | 4 | 450 |
+| Brig | 15 | 5 | 11 | 675 |
+| Swift | 12 | 7 | 8 | 900 |
 
-A surviving target in contact replies once before its next activation:
-50% of one melee hit, or 100% while defending. Replies never trigger replies.
-The reply lands between double hits; the second hit uses the surviving attackers.
-
-Pre-battle slots determine activation order. There are no flagships or AP.
-Stationary ships are not pushed. Collision damage is disabled in this crew experiment.
-The balance targets about 15 individual ship activations in the separate open-map model.
-Actual play, aiming, obstacles and bot decisions can differ. First-player advantage remains under study.
+Pre-battle slots determine activation order. No flagships or AP. Ships do not push stationary ships.
+Collision damage is disabled. Camera stays still. The previous 15.3-turn simulator result belongs to v0.7.
+This simpler balance needs a fresh playtest; no counter-class triangle is claimed.
 
 This public repository contains generated player files only.
-
