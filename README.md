@@ -1,24 +1,28 @@
-# Sea Duel — simple crew combat v0.8
+# Sea Duel — damage ranges and class ranges v0.9
 
 Experimental browser playtest. Play in landscape.
 
-Each ship starts with 20 fighters. A large number below the ship shows its surviving crew.
-Damage = surviving fighters x their ranged or melee damage. Wounds persist; zero crew sinks the ship.
-Every attack is one hit. There are no counterattacks, double hits, class exceptions or defence bonuses.
+Each ship starts with 20 fighters. A number below the hull shows surviving crew.
+One integer damage roll per attack, from the fighter's inclusive interval, multiplied by living crew.
+Wounds persist; zero crew sinks the ship. One hit, no retaliation, double hits or defence bonuses.
 
 Draw a route to sail. Pull backwards from the active ship to fire. Return the pull to cancel.
-BOARD is a manual button in contact. Point-blank shooting is allowed.
-Choose one attack per turn: FIRE or BOARD. Movement is independent and can come before or after it.
-End turn passes without a defence bonus. A miss uses the attack; cancellation does not.
+BOARD is manual in contact; point-blank shooting is allowed.
+One attack per turn: FIRE or BOARD. Movement can come before or after the attack.
+A miss uses the attack; cancellation does not. End turn skips the remaining action.
 
-| Ship | Fighter HP | Ranged | Melee | Movement |
-|---|---:|---:|---:|---:|
-| Galleon | 18 | 11 | 4 | 450 |
-| Brig | 15 | 5 | 11 | 675 |
-| Swift | 12 | 7 | 8 | 900 |
+| Ship | Fighter HP | Ranged damage | Melee damage | Range | Movement |
+|---|---:|---:|---:|---:|---:|
+| Galleon | 25 | 9–11 | 1–2 | 800 | 450 |
+| Brig | 40 | 1–2 | 32–38 | 500 | 350 |
+| Swift | 25 | 1–2 | 20–25 | 250 | 1100 |
 
-Pre-battle slots determine activation order. No flagships or AP. Ships do not push stationary ships.
-Collision damage is disabled. Camera stays still. The previous 15.3-turn simulator result belongs to v0.7.
-This simpler balance needs a fresh playtest; no counter-class triangle is claimed.
+Galleon keeps distance against Brig; Swift closes against Galleon; Brig wins contact against Swift.
+AI duels on islands: Galleon > Brig60/60, Swift > Galleon60/60, Brig > Swift52/60.
+These are heuristic simulations, not proof of optimal play.50 mirrored fleet matches averaged24.4 activations;
+first side won46/50. The15-turn target and initiative balance remain unresolved. Published at the owner's request for playtesting.
+
+Crew labels are slightly smaller and the floating pull-control hint is hidden.
+Fixed slot order, stationary camera, no AP, flagships, collision damage or stationary ship pushing.
 
 This public repository contains generated player files only.
