@@ -1,4 +1,4 @@
-# Sea Duel — damage ranges and class ranges v0.9
+# Sea Duel — lower-damage playtest v0.10
 
 Experimental browser playtest. Play in landscape.
 
@@ -13,14 +13,16 @@ A miss uses the attack; cancellation does not. End turn skips the remaining acti
 
 | Ship | Fighter HP | Ranged damage | Melee damage | Range | Movement |
 |---|---:|---:|---:|---:|---:|
-| Galleon | 25 | 9–11 | 1–2 | 800 | 450 |
-| Brig | 40 | 1–2 | 32–38 | 500 | 350 |
-| Swift | 25 | 1–2 | 20–25 | 250 | 1100 |
+| Galleon | 25 | 8–9 | 1–2 | 800 | 450 |
+| Brig | 40 | 1–2 | 18–22 | 500 | 350 |
+| Swift | 25 | 1–2 | 14–17 | 250 | 1100 |
 
 Galleon keeps distance against Brig; Swift closes against Galleon; Brig wins contact against Swift.
-AI duels on islands: Galleon > Brig60/60, Swift > Galleon60/60, Brig > Swift52/60.
-These are heuristic simulations, not proof of optimal play.50 mirrored fleet matches averaged24.4 activations;
-first side won46/50. The15-turn target and initiative balance remain unresolved. Published at the owner's request for playtesting.
+AI duels on islands: Galleon > Brig 30/30, Swift > Galleon 30/30, Brig > Swift 30/30.
+These are heuristic simulations, not proof of optimal play. In 100 fresh-seed mirrored fleet matches,
+98 finished by sinking a fleet (mean 32.53 activations); 2 reached the 120-turn limit.
+The first ship sank at mean turn 6.67. The 15-turn target and initiative balance remain unresolved.
+Published at the owner's request to test longer exchanges. Retaliation is not included in this build.
 
 Crew labels are slightly smaller and the floating pull-control hint is hidden.
 Fixed slot order, stationary camera, no AP, flagships, collision damage or stationary ship pushing.
