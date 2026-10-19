@@ -1,10 +1,13 @@
-# Sea Duel — candidate A playtest v0.11
+# Sea Duel — boarding retaliation playtest v0.12
 
 Experimental browser playtest. Play in landscape.
 
 Each ship starts with 20 fighters. The number below the hull shows surviving crew.
 One integer damage roll per attack, from the fighter's inclusive interval, multiplied by living crew.
-Wounds persist; zero crew sinks the ship. One hit, no retaliation, double hits or defence bonuses.
+Wounds persist; zero crew sinks the ship. One initiating hit. Surviving defenders answer every boarding once with their remaining crew and melee damage.
+The answer uses an independent integer roll, can sink the attacker, and causes no counter-chain.
+A sunk defender cannot answer. Shooting, including point-blank shooting, causes no reply.
+Replies do not spend the defender's own attack. No double attacks or defence bonuses.
 
 Draw a route to sail. Pull backwards from the active ship to fire. Return the pull to cancel.
 BOARD is manual in contact; point-blank shooting is allowed.
@@ -17,14 +20,11 @@ A miss uses the attack; cancellation does not. End turn skips the remaining acti
 | Brig | 28 | 6–10 | 16–24 | 400 | 700 |
 | Swift | 22 | 10–14 | 12–18 | 450 | 1100 |
 
-Candidate A (profile 4495) from a search of 6656 tuning profiles and 287640 main simulated games.
-With the unchanged production bot, 99/100 fresh mirrored fleet matches ended naturally,
-averaging 14.90 individual ship activations; one reached the 120-activation cap.
-The first ship sank at mean activation 3.36; the starting side won 85/99 natural matches.
-These heuristic results do not establish optimal play or a complete rock-paper-scissors balance.
-Initiative and fleet composition remain unresolved. This build is for live testing.
+Candidate A (profile 4495) stats are unchanged. Boarding retaliation is the new experiment.
+The bot includes immediate retaliation losses when choosing its attack.
+Controls, camera, movement and the bot's existing withdrawal condition are unchanged.
+Old v0.11 duration and matchup results do not describe this new ruleset.
 
-Controls, camera, bot and combat rules are unchanged from v0.10.
 Fixed slot order, no AP, flagships, collision damage or stationary ship pushing.
 All three ships have 360-degree firing sectors. Crew size does not affect movement or range.
 
