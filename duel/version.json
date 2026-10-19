@@ -1,1 +1,1 @@
-{"aimCamera":"ShotFollowCamera","aimSector":45,"ships":2,"crew":false,"stamp":"Build-1792433885","controls":"draw / pull / release","boarding":false,"health":100,"label":"duel-v0.2","shotDamage":20,"publishedUtc":"2026-10-19T18:18:19.0450491Z"}
+{"ships":2,"boarding":false,"crew":false,"stamp":"Build-1792440219","health":100,"aimSector":45,"aimCamera":"ShotFollowCamera","publishedUtc":"2026-10-19T20:03:50.9808731Z","label":"duel-v0.3","shotDamage":20,"controls":"draw / pull / release"}
