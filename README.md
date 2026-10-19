@@ -1,8 +1,8 @@
-# Sea Duel — lower-damage playtest v0.10
+# Sea Duel — candidate A playtest v0.11
 
 Experimental browser playtest. Play in landscape.
 
-Each ship starts with 20 fighters. A number below the hull shows surviving crew.
+Each ship starts with 20 fighters. The number below the hull shows surviving crew.
 One integer damage roll per attack, from the fighter's inclusive interval, multiplied by living crew.
 Wounds persist; zero crew sinks the ship. One hit, no retaliation, double hits or defence bonuses.
 
@@ -11,20 +11,21 @@ BOARD is manual in contact; point-blank shooting is allowed.
 One attack per turn: FIRE or BOARD. Movement can come before or after the attack.
 A miss uses the attack; cancellation does not. End turn skips the remaining action.
 
-| Ship | Fighter HP | Ranged damage | Melee damage | Range | Movement |
+| Ship | Fighter HP | Ranged damage per fighter | Melee damage per fighter | Range | Movement |
 |---|---:|---:|---:|---:|---:|
-| Galleon | 25 | 8–9 | 1–2 | 800 | 450 |
-| Brig | 40 | 1–2 | 18–22 | 500 | 350 |
-| Swift | 25 | 1–2 | 14–17 | 250 | 1100 |
+| Galleon | 24 | 9–13 | 10–16 | 750 | 400 |
+| Brig | 28 | 6–10 | 16–24 | 400 | 700 |
+| Swift | 22 | 10–14 | 12–18 | 450 | 1100 |
 
-Galleon keeps distance against Brig; Swift closes against Galleon; Brig wins contact against Swift.
-AI duels on islands: Galleon > Brig 30/30, Swift > Galleon 30/30, Brig > Swift 30/30.
-These are heuristic simulations, not proof of optimal play. In 100 fresh-seed mirrored fleet matches,
-98 finished by sinking a fleet (mean 32.53 activations); 2 reached the 120-turn limit.
-The first ship sank at mean turn 6.67. The 15-turn target and initiative balance remain unresolved.
-Published at the owner's request to test longer exchanges. Retaliation is not included in this build.
+Candidate A (profile 4495) from a search of 6656 tuning profiles and 287640 main simulated games.
+With the unchanged production bot, 99/100 fresh mirrored fleet matches ended naturally,
+averaging 14.90 individual ship activations; one reached the 120-activation cap.
+The first ship sank at mean activation 3.36; the starting side won 85/99 natural matches.
+These heuristic results do not establish optimal play or a complete rock-paper-scissors balance.
+Initiative and fleet composition remain unresolved. This build is for live testing.
 
-Crew labels are slightly smaller and the floating pull-control hint is hidden.
-Fixed slot order, stationary camera, no AP, flagships, collision damage or stationary ship pushing.
+Controls, camera, bot and combat rules are unchanged from v0.10.
+Fixed slot order, no AP, flagships, collision damage or stationary ship pushing.
+All three ships have 360-degree firing sectors. Crew size does not affect movement or range.
 
 This public repository contains generated player files only.
