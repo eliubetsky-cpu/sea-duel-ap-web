@@ -120,9 +120,9 @@
         if (type !== "error") setTimeout(function () { banner.removeChild(div); }, 5000);
       }
 
-      // Обход кэша GitHub Pages/браузера (ловушка из tech-profile): index.html не меняется между
-      // деплоями, а имя каталога билда читается из build.txt с антикэш-параметром — tools/deploy.sh
-      // пишет туда Build-<epoch>. Локально build.txt нет → каталог Build.
+      // Around the GitHub Pages / browser cache: index.html stays the same between deploys, and the build
+      // folder's name is read from build.txt with a cache-busting parameter - tools/deploy.sh writes
+      // Build-<epoch> there. Locally there is no build.txt, so the folder is Build.
       var buildUrl = (function () {
         try {
           var x = new XMLHttpRequest(); x.open("GET", "build.txt?t=" + Date.now(), false); x.send();
@@ -130,13 +130,13 @@
         } catch (e) {}
         return "Build";
       })();
-      // М47, телефон: холст Unity по умолчанию рисуется в плотности экрана устройства — на телефоне с DPR 3
-      // это втрое больше пикселей по каждой оси, вдевятеро больше работы на кадр. Держим буфер рисования сами:
-      // плотность не выше 2 и не больше бюджета пикселей. CSS растягивает холст как прежде.
-      // М53 (автор: «можем пиксельность эту убрать»): бюджет поднят до 2.1 млн — холст перестал быть меньше
-      // своего места на экране, и HUD с текстом рисуется точка в точку. Мир при этом дешевле холста:
-      // URP рисует сцену в render scale 0.75 и растягивает её FSR'ом, а интерфейс (Screen Space - Overlay)
-      // идёт мимо этого и остаётся резким. Бюджет подкручивается ссылкой: ?px=900000 — мягче к телефону.
+      // On a phone Unity's canvas is drawn at the device's pixel density by default - at DPR 3 that is three
+      // times the pixels on each axis, nine times the work a frame. The drawing buffer is kept here instead:
+      // density no higher than 2 and no more than a pixel budget; CSS stretches the canvas as before.
+      // The budget (2.1 million) keeps the canvas no smaller than its place on screen, so the HUD and its text
+      // are drawn pixel for pixel. The world is cheaper than the canvas anyway: URP draws the scene at render
+      // scale 0.75 and upscales it with FSR, while the Screen Space - Overlay UI stays sharp. The budget can be
+      // tuned from the link: ?px=900000 is gentler on a phone.
       var MAX_PIXELS = (function () {
         var m = /[?&]px=(\d+)/.exec(location.search);
         return m ? Math.max(120000, Math.min(4000000, parseInt(m[1], 10))) : 2100000;   // ~1920×1094
@@ -157,18 +157,18 @@
       var config = {
         matchWebGLToCanvasSize: false,
         arguments: [],
-        dataUrl: buildUrl + "/Tactical-Duel-WebGL.data.unityweb",
-        frameworkUrl: buildUrl + "/Tactical-Duel-WebGL.framework.js.unityweb",
-        codeUrl: buildUrl + "/Tactical-Duel-WebGL.wasm.unityweb",
+        dataUrl: buildUrl + "/Frigate-Duel-WebGL.data.unityweb",
+        frameworkUrl: buildUrl + "/Frigate-Duel-WebGL.framework.js.unityweb",
+        codeUrl: buildUrl + "/Frigate-Duel-WebGL.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "TashaDz",
         productName: "Sea Duel",
-        productVersion: "duel-v0.5 2026-10-20 08:57",
+        productVersion: "experiment/tactical-duel 838d1d1+ 2026-10-23 18:50",
         showBanner: unityShowBanner,
       };
 
       var script = document.createElement("script");
-      script.src = buildUrl + "/Tactical-Duel-WebGL.loader.js";
+      script.src = buildUrl + "/Frigate-Duel-WebGL.loader.js";
       script.onload = function () {
         createUnityInstance(canvas, config, function (progress) {
           document.querySelector("#unity-loading-fill").style.width = (100 * progress) + "%";
