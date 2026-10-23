@@ -1,2 +1,2 @@
-# Sea Duel - Frigates
-One stock frigate per side. Based on TashaDz/sea-duel main e60a35f, with Iaroslav's SeaWater4, seabed and prefab boat wakes. Draw a route to sail, pull for a broadside, end the turn. Five-round limit. The root fleet build is preserved.
+# Sea Duel - Mirror Duel
+Choose Sloop, Brig, Frigate or Galleon on the starting menu. Both sides receive one ship of the selected type. Stock rules, five rounds, SeaWater4, seabed and prefab boat wakes from main e60a35f. The root fleet build is preserved.
