@@ -1,2 +1,3 @@
-# Sea Duel - Mirror Duel
-Choose Sloop, Brig, Frigate or Galleon on the starting menu. Both sides receive one ship of the selected type. Stock rules, five rounds, SeaWater4, seabed and prefab boat wakes from main e60a35f. The root fleet build is preserved.
+Sea Duel mirror duels: choose Sloop, Brig, Frigate or Galleon; the opponent matches the choice.
+Galleon toy: 540 movement, fixed overview at 115% screen scale, visual broadside recoil with settling bob and water rings.
+Main water, seabed and prefab wakes. Other ship types retain their previous camera and stats.
